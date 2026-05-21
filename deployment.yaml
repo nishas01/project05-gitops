@@ -2,10 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: demo-app
-  labels:
-    app: demo-app
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: demo-app
@@ -16,6 +14,6 @@ spec:
     spec:
       containers:
       - name: demo-app
-        image: nishaacr.azurecr.io/demo-app:new
+        image: nishaacr/demo-app:latest
         ports:
-        - containerPort: 5000
+        - containerPort: 80
